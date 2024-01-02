@@ -1,4 +1,15 @@
 {% extends "layout.html" %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/game.css' %}">
+{% endblock %}
+
 {% block body %}
-    <div>test</div>
+    <div id="kof"></div>
+    <script type="module">
+        import KOF from '{% static 'js/KOF.js' %}'
+
+        let kof = new KOF('kof')
+    </script>
 {% endblock %}

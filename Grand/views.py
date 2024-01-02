@@ -3,4 +3,4 @@ from django.core.handlers.wsgi import WSGIRequest
 
 
 def menu(request: WSGIRequest):
-    return render(request, 'menu.html')
+    return render(request, 'game.html')
