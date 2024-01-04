@@ -20,5 +20,6 @@ from Kaiser.views import index
 urlpatterns = [
     path('', index, name='Kaiser'),
     path('grand/', include('Grand.urls'), name='Grand'),
+    path('brand/', include('Brand.urls'), name='Brand'),
     path("admin/", admin.site.urls),
 ]
