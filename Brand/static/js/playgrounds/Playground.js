@@ -2,6 +2,7 @@ import GameMap from "./GameMap.js";
 import NoticeBoard from "./NoticeBoard.js";
 import ScoreBoard from "./ScoreBoard.js";
 import Player from "./Player.js";
+
 export default class GamePlayground {
     constructor(root) {
         this.root = root;
@@ -21,7 +22,7 @@ export default class GamePlayground {
     create_uuid() {
         let res = "";
         for (let i = 0; i < 8; i++) {
-            let x = parseInt(Math.floor(Math.random() * 10));  // 返回[0, 1)之间的数
+            let x = parseInt(Math.floor(Math.random() * 10).toString());  // 返回[0, 1)之间的数
             res += x;
         }
         return res;

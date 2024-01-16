@@ -32,13 +32,8 @@ export default class Settings {
                     <div class="ac-game-settings-option">
                         Sign up
                     </div>
-                    <br>
                     <div class="ac-game-settings-acwing">
                         <img width="30" src="https://app165.acapp.acwing.com.cn/static/image/settings/acwing_logo.png" alt="logo">
-                        <br>
-                        <div>
-                            AcWing
-                        </div>
                     </div>
                 </div>
                 <div class="ac-game-settings-register">
@@ -70,13 +65,8 @@ export default class Settings {
                     <div class="ac-game-settings-option">
                         Sign in
                     </div>
-                    <br>
                     <div class="ac-game-settings-acwing">
                         <img width="30" src="https://app165.acapp.acwing.com.cn/static/image/settings/acwing_logo.png" alt="logo">
-                        <br>
-                        <div>
-                            AcWing
-                        </div>
                     </div>
                 </div>
             </div>
@@ -102,13 +92,8 @@ export default class Settings {
     }
 
     start() {
-        // if (this.platform === "ACAPP") {
-        //     this.getinfo_acapp();
-        // } else {
-        {
-            this.getinfo_web();
-            this.add_listening_events();
-        }
+        this.getinfo_web();
+        this.add_listening_events();
     }
 
     add_listening_events() {
@@ -159,9 +144,8 @@ export default class Settings {
         let username = this.$login_username.val();
         let password = this.$login_password.val();
         this.$login_error_message.empty();
-
         $.ajax({
-            url: "https://app165.acapp.acwing.com.cn/settings/login/", type: "GET", data: {
+            url: "/brand/signin", type: "GET", data: {
                 username: username, password: password,
             }, success: function (resp) {
                 if (resp.result === "success") {
@@ -181,7 +165,7 @@ export default class Settings {
         this.$register_error_message.empty();
 
         $.ajax({
-            url: "https://app165.acapp.acwing.com.cn/settings/register/", type: "GET", data: {
+            url: "/brand/register", type: "GET", data: {
                 username: username, password: password, password_confirm: password_confirm,
             }, success: function (resp) {
                 if (resp.result === "success") {
@@ -194,17 +178,13 @@ export default class Settings {
     }
 
     logout_on_remote() {  // 在远程服务器上登出
-        if (this.platform === "ACAPP") {
-            this.root.AcWingOS.api.window.close();
-        } else {
-            $.ajax({
-                url: "https://app165.acapp.acwing.com.cn/settings/logout/", type: "GET", success: function (resp) {
-                    if (resp.result === "success") {
-                        location.reload();
-                    }
+        $.ajax({
+            url: "/brand/logout", type: "GET", success: function (resp) {
+                if (resp.result === "success") {
+                    location.reload();
                 }
-            });
-        }
+            }
+        });
     }
 
     register() {  // 打开注册界面
@@ -248,10 +228,10 @@ export default class Settings {
         let outer = this;
 
         $.ajax({
-            url: "https://app165.acapp.acwing.com.cn/settings/getinfo/", type: "GET", data: {
+            url: "/brand/get_info", type: "GET", data: {
                 platform: outer.platform,
             }, success: function (resp) {
-                if (true || resp.result === "success") {
+                if (resp.result === "success") {
                     outer.username = resp.username;
                     outer.photo = resp.photo;
                     outer.hide();

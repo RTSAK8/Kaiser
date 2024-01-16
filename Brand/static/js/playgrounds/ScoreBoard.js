@@ -9,10 +9,10 @@ export default class ScoreBoard extends GameObject {
         this.state = null;  // win: 胜利，lose：失败
 
         this.win_img = new Image();
-        this.win_img.src = "https://cdn.acwing.com/media/article/image/2021/12/17/1_8f58341a5e-win.png";
+        this.win_img.src = "/static/images/win.png";
 
         this.lose_img = new Image();
-        this.lose_img.src = "https://cdn.acwing.com/media/article/image/2021/12/17/1_9254b5f95e-lose.png";
+        this.lose_img.src = "/static/images/lose.png";
     }
 
     start() {

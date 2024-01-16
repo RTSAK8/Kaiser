@@ -1,6 +1,7 @@
 import GameObject from "./GameObject.js";
 import FireBall from "../skills/FireBall.js";
 import Particle from "../particles/Particle.js";
+
 export default class Player extends GameObject {
     constructor(playground, x, y, radius, color, speed, character, username, photo) {
         super();
@@ -26,20 +27,19 @@ export default class Player extends GameObject {
         this.fireballs = [];
 
         this.cur_skill = null;
-
         if (this.character !== "robot") {
             this.img = new Image();
-            this.img.src = "https://cdn.acwing.com/media/article/image/2021/12/02/1_9340c86053-fireball.png"//this.photo;
+            this.img.src = this.photo;
         }
 
         if (this.character === "me") {
-            this.fireball_coldtime = 3;  // 单位：秒
+            this.fireball_coldtime = 1;  // 单位：秒
             this.fireball_img = new Image();
             this.fireball_img.src = "/static/images/fireball.png";
 
-            this.blink_coldtime = 5;  // 单位：秒
+            this.blink_coldtime = 3;  // 单位：秒
             this.blink_img = new Image();
-            this.blink_img.src = "https://cdn.acwing.com/media/article/image/2021/12/02/1_daccabdc53-blink.png";
+            this.blink_img.src = "/static/images/blink.png";
         }
     }
 
