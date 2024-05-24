@@ -2,17 +2,19 @@
 
 <h1 align="center"> Greetings!🔖</h1>
 
-Welcome to Kaiser, an innovative web project that seamlessly integrates pure JavaScript and Django. 
+Welcome to Kaiser, an innovative web project that seamlessly integrates pure JavaScript and Django.
 
-This project features two engaging games, demonstrating the art of crafting a simple yet robust web application.
+This project showcases two engaging games, demonstrating the art of crafting a simple yet robust web application.
 
-If you are a web noob who want to copy project, or some part of this starter project give you some instinct, I'll be happy this can help you.
+Whether you're a novice in web development looking to replicate the project or seeking inspiration from specific components of this starter project, I hope this serves as a valuable resource for you.
 
-This Project contains 2 parts, (3 parts exactly):
+The project consists of three main parts:
 
-- Home Page: Not much instruct of this, just a leading page.
-- Grand (or The King of Fighters): I write a simple KoF in this part with pure JS, and this is my first step of web.
-- Brand (or War of Warlock): A more complex game, include interact module and account system, mainly used for applying powerful Django.
+1. **Home Page:** This serves as a welcoming page with minimal instructions.
+2. **Grand (or The King of Fighters):** In this section, I've created a simple King of Fighters (KoF) game using pure JS. This marks my initial foray into web development.
+3. **Brand (or War of Warlock):** This is a more intricate game that includes an interactive module and an account system, primarily utilizing the powerful capabilities of Django.
+
+Feel free to explore, learn, and adapt these components to enhance your web development skills. Enjoy the journey!
 
 <h1 align="center"> How to use</h1>
 
